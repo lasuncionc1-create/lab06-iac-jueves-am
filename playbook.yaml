@@ -18,10 +18,6 @@
         content: "Ansible funcionando mi nombre es Luis Asuncion y estoy en {{ ambiente }}"
         dest: ./saludo.txt
 
-    - name: Escribir mi nombre en el file 2
-      ansible.builtin.copy:
-        content: "Ansible funcionando mi nombre es Luis Asuncion y estoy en {{ ambiente }}"
-        dest: ./saludo.txt
 
 # when: ambiente == dev #prod
 
