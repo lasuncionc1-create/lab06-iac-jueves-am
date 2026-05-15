@@ -8,15 +8,15 @@
       ansible.builtin.debug:
         msg: "Hola desde Ansible! Host {{ inventory_hostname }}"
     
-    - name: Crear un archivo con mi nombre
-      ansible.builtin.file:
-        path: ./saludo.txt
-        state: touch
-    
     - name: Escribir mi nombre en el file
       ansible.builtin.copy:
-        content: "Ansible funcionando mi nombre es Luis Asuncion y estoy en {{ ambiente }}"
+        content: "Ansible funcionando mi nombre es Luis Gerardo Asuncion Chira y estoy en {{ ambiente }}"
         dest: ./saludo.txt
+
+    - name: Escribir mi nombre en el file 2
+      ansible.builtin.copy:
+        content: "Este es el segundo archivo de evidencia de Luis Gerardo Asuncion Chira"
+        dest: ./evidencia2.txt
 
 
 # when: ambiente == dev #prod
