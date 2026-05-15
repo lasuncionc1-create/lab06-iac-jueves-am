@@ -1,0 +1,29 @@
+---
+- name: Bienvenidos a lab con ansible
+  hosts: local
+  vars:
+    ambiente: dev
+  tasks:
+    - name: Imprimir mensaje
+      ansible.builtin.debug:
+        msg: "Hola desde Ansible! Host {{ inventory_hostname }}"
+    
+    - name: Crear un archivo con mi nombre
+      ansible.builtin.file:
+        path: ./saludo.txt
+        state: touch
+    
+    - name: Escribir mi nombre en el file
+      ansible.builtin.copy:
+        content: "Ansible funcionando mi nombre es Luis Asuncion y estoy en {{ ambiente }}"
+        dest: ./saludo.txt
+
+    - name: Escribir mi nombre en el file 2
+      ansible.builtin.copy:
+        content: "Ansible funcionando mi nombre es Luis Asuncion y estoy en {{ ambiente }}"
+        dest: ./saludo.txt
+
+# when: ambiente == dev #prod
+
+# Subir capturas de lo que consideran relevante para evidenciar
+# su trabajo. Subir en formato .pdf
